@@ -76,6 +76,10 @@ jobs:
           SLC: /opt/slc_cli/slc
           COMMANDER: /opt/commander/commander
 
+      - name: Check build output
+        run: |
+          ls -la build/release
+
       - name: Determine firmware version
         id: version
         run: |
@@ -89,8 +93,10 @@ jobs:
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
           echo "SUFFIX=${SUFFIX}" >> $GITHUB_ENV
 
-      - name: Copy HEX file
-        run: cp build/release/nc_controller_ncp.hex artifact/zwa2_controller.hex
+      - name: Copy HEX and OUT files
+        run: |
+          cp build/release/nc_controller_ncp.hex artifact/zwa2_controller.hex
+          cp build/release/nc_controller_ncp.out artifact/zwa2_controller.out
 
       - name: Compute checksums for HEX files
         run: |
@@ -108,6 +114,8 @@ jobs:
           echo "HEX_SHA256=zwa2_controller_${{ env.SUFFIX }}.hex.sha256" >> $GITHUB_ENV
           cp artifact/zwa2_controller.hex.md5 upload/zwa2_controller_${{ env.SUFFIX }}.hex.md5
           echo "HEX_MD5=zwa2_controller_${{ env.SUFFIX }}.hex.md5" >> $GITHUB_ENV
+          cp artifact/zwa2_controller.out upload/zwa2_controller_${{ env.SUFFIX }}.out
+          echo "OUT=zwa2_controller_${{ env.SUFFIX }}.out" >> $GITHUB_ENV
 
       - name: Upload GBL
         uses: actions/upload-artifact@v4
@@ -132,6 +140,12 @@ jobs:
         with:
           name: ${{ env.HEX_MD5 }}
           path: upload/${{ env.HEX_MD5 }}
+
+      - name: Upload OUT
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.OUT }}
+          path: upload/${{ env.OUT }}
 
       - name: Upload firmware package
         uses: actions/upload-artifact@v4
