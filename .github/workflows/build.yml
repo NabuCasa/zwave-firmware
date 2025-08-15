@@ -93,10 +93,11 @@ jobs:
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
           echo "SUFFIX=${SUFFIX}" >> $GITHUB_ENV
 
-      - name: Copy HEX and OUT files
+      - name: Copy build artifacts
         run: |
           cp build/release/nc_controller_ncp.hex artifact/zwa2_controller.hex
           cp build/release/nc_controller_ncp.out artifact/zwa2_controller.out
+          cp build/release/nc_controller_ncp.map artifact/zwa2_controller.map
 
       - name: Compute checksums for HEX files
         run: |
@@ -116,6 +117,8 @@ jobs:
           echo "HEX_MD5=zwa2_controller_${{ env.SUFFIX }}.hex.md5" >> $GITHUB_ENV
           cp artifact/zwa2_controller.out upload/zwa2_controller_${{ env.SUFFIX }}.out
           echo "OUT=zwa2_controller_${{ env.SUFFIX }}.out" >> $GITHUB_ENV
+          cp artifact/zwa2_controller.map upload/zwa2_controller_${{ env.SUFFIX }}.map
+          echo "MAP=zwa2_controller_${{ env.SUFFIX }}.map" >> $GITHUB_ENV
 
       - name: Upload GBL
         uses: actions/upload-artifact@v4
@@ -146,6 +149,12 @@ jobs:
         with:
           name: ${{ env.OUT }}
           path: upload/${{ env.OUT }}
+
+      - name: Upload MAP
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.MAP }}
+          path: upload/${{ env.MAP }}
 
       - name: Upload firmware package
         uses: actions/upload-artifact@v4
