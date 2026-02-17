@@ -13,9 +13,10 @@ DocumentNamespace: https://silabs.com
 
 ## Creation Information
 Creator: Organization: Silicon Laboratories, Inc.
-Created: 2026-02-17T13:14:39Z
+Created: 2026-02-17T13:55:16Z
 ## Relationships
 Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-silabs.simplicity_sdk-2025.12.1
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-nabucasa.nabucasa_zwa2-1.0.0
 
 ## Package Information
 PackageName: Simplicity SDK Suite
@@ -172,6 +173,8 @@ Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.si
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-sl_main_init
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-sl_main_process_action
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-gpio
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_pwm_led_core
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_rgb_pwm_led_core
 
 ## Package Information
 PackageName: EFR32ZG23A020F512GM40
@@ -1879,3 +1882,70 @@ PackageSupplier: Organization: Silicon Laboratories, Inc.
 PackageLicenseConcluded: Zlib
 ## Relationships
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-gpio CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
+
+## Package Information
+PackageName: Simple PWM LED Core
+SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_pwm_led_core
+PackageVersion: 2025.12.1
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: Silicon Laboratories, Inc.
+PackageLicenseConcluded: Zlib
+## Relationships
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_pwm_led_core CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
+
+## Package Information
+PackageName: Simple RGB PWM LED
+SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_rgb_pwm_led_core
+PackageVersion: 2025.12.1
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: Silicon Laboratories, Inc.
+PackageLicenseConcluded: Zlib
+## Relationships
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_rgb_pwm_led_core CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
+
+## Package Information
+PackageName: No name
+SPDXID: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0
+PackageVersion: 1.0.0
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: NOASSERTION
+## Relationships
+Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0 CONTAINS SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-led_effects_base
+Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0 CONTAINS SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-ws2812_driver
+Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0 CONTAINS SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-qma6100p_driver
+
+## Package Information
+PackageName: LED Effects Base
+SPDXID: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-led_effects_base
+PackageVersion: 1.0.0
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+## Relationships
+Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-led_effects_base CONTAINED_BY SPDXRef-nabucasa.nabucasa_zwa2-1.0.0
+
+## Package Information
+PackageName: WS2812 LED Driver
+SPDXID: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-ws2812_driver
+PackageVersion: 1.0.0
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+## Relationships
+Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-ws2812_driver CONTAINED_BY SPDXRef-nabucasa.nabucasa_zwa2-1.0.0
+
+## Package Information
+PackageName: QMA6100P Accelerometer Driver
+SPDXID: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-qma6100p_driver
+PackageVersion: 1.0.0
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+## Relationships
+Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-qma6100p_driver CONTAINED_BY SPDXRef-nabucasa.nabucasa_zwa2-1.0.0

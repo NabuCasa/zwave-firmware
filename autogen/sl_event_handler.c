@@ -5,6 +5,9 @@
 #include "sl_rail_util_power_manager_init.h"
 #include "sl_rail_util_pti.h"
 #include "btl_interface.h"
+#include "led_manager.h"
+#include "qma6100p.h"
+#include "ws2812.h"
 #include "sl_debug_swo.h"
 #include "sl_gpio.h"
 #include "gpiointerrupt.h"
@@ -53,6 +56,7 @@ void sl_kernel_start(void)
 
 void sl_driver_init(void)
 {
+  ws2812_led_driver_init();
   sl_debug_swo_init();
   sl_gpio_init();
   GPIOINT_Init();
@@ -73,6 +77,7 @@ void sl_stack_init(void)
   sl_rail_util_pa_init();
   sl_rail_util_power_manager_init();
   sl_rail_util_pti_init();
+  qma6100p_system_init();
   sl_zwave_protocol_startup();
 }
 

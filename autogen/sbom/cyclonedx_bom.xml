@@ -10,7 +10,7 @@ referenced in this SBOM.)
 -->
 <bom xmlns="http://cyclonedx.org/schema/bom/1.6" version="1">
   <metadata>
-    <timestamp>2026-02-17T13:14:39Z</timestamp>
+    <timestamp>2026-02-17T13:55:16Z</timestamp>
     <authors>
       <author>
         <name>Silicon Laboratories, Inc.</name>
@@ -1613,6 +1613,53 @@ referenced in this SBOM.)
 	      </supplier>
           <licenses>
             <expression>Zlib</expression>
+          </licenses>
+        </component>
+        <component bom-ref="silabs.simplicity_sdk:2025.12.1:simple_pwm_led_core" type="library">
+          <name>Simple PWM LED Core</name>
+          <version>2025.12.1</version>
+	      <supplier>
+	        <name>Silicon Laboratories, Inc.</name>
+	      </supplier>
+          <licenses>
+            <expression>Zlib</expression>
+          </licenses>
+        </component>
+        <component bom-ref="silabs.simplicity_sdk:2025.12.1:simple_rgb_pwm_led_core" type="library">
+          <name>Simple RGB PWM LED</name>
+          <version>2025.12.1</version>
+	      <supplier>
+	        <name>Silicon Laboratories, Inc.</name>
+	      </supplier>
+          <licenses>
+            <expression>Zlib</expression>
+          </licenses>
+        </component>
+      </components>
+    </component>
+    <component bom-ref="nabucasa.nabucasa_zwa2:1.0.0" type="library">
+      <name>No name</name>
+      <version>1.0.0</version>
+      <components>
+        <component bom-ref="nabucasa.nabucasa_zwa2:1.0.0:led_effects_base" type="library">
+          <name>LED Effects Base</name>
+          <version>1.0.0</version>
+          <licenses>
+            <expression>NOASSERTION</expression>
+          </licenses>
+        </component>
+        <component bom-ref="nabucasa.nabucasa_zwa2:1.0.0:ws2812_driver" type="library">
+          <name>WS2812 LED Driver</name>
+          <version>1.0.0</version>
+          <licenses>
+            <expression>NOASSERTION</expression>
+          </licenses>
+        </component>
+        <component bom-ref="nabucasa.nabucasa_zwa2:1.0.0:qma6100p_driver" type="library">
+          <name>QMA6100P Accelerometer Driver</name>
+          <version>1.0.0</version>
+          <licenses>
+            <expression>NOASSERTION</expression>
           </licenses>
         </component>
       </components>

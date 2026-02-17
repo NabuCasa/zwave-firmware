@@ -3,7 +3,7 @@
   "specVersion" : "1.6",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2026-02-17T13:14:39Z",
+    "timestamp" : "2026-02-17T13:55:16Z",
     "authors" : [ {
       "name" : "Silicon Laboratories, Inc."
     } ],
@@ -1904,6 +1904,64 @@
       },
       "licenses" : [ {
         "expression" : "Zlib"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.1:simple_pwm_led_core",
+      "name" : "Simple PWM LED Core",
+      "version" : "2025.12.1",
+      "supplier" : {
+        "name" : "Silicon Laboratories, Inc."
+      },
+      "licenses" : [ {
+        "expression" : "Zlib"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.1:simple_rgb_pwm_led_core",
+      "name" : "Simple RGB PWM LED",
+      "version" : "2025.12.1",
+      "supplier" : {
+        "name" : "Silicon Laboratories, Inc."
+      },
+      "licenses" : [ {
+        "expression" : "Zlib"
+      } ]
+    } ]
+  }, {
+    "scope" : "required",
+    "type" : "library",
+    "bom-ref" : "nabucasa.nabucasa_zwa2:1.0.0",
+    "name" : "No name",
+    "version" : "1.0.0",
+    "components" : [ {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "nabucasa.nabucasa_zwa2:1.0.0:led_effects_base",
+      "name" : "LED Effects Base",
+      "version" : "1.0.0",
+      "licenses" : [ {
+        "expression" : "NOASSERTION"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "nabucasa.nabucasa_zwa2:1.0.0:ws2812_driver",
+      "name" : "WS2812 LED Driver",
+      "version" : "1.0.0",
+      "licenses" : [ {
+        "expression" : "NOASSERTION"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "nabucasa.nabucasa_zwa2:1.0.0:qma6100p_driver",
+      "name" : "QMA6100P Accelerometer Driver",
+      "version" : "1.0.0",
+      "licenses" : [ {
+        "expression" : "NOASSERTION"
       } ]
     } ]
   } ]

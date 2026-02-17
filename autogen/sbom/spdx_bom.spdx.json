@@ -5,11 +5,11 @@
   "name" : "Silicon-Laboratories",
   "documentNamespace" : "https://silabs.com",
   "creationInfo" : {
-    "created" : "2026-02-17T13:14:39Z",
+    "created" : "2026-02-17T13:55:16Z",
     "creators" : [ "Tool: Silicon Labs Configuration Tooling" ]
   },
   "comment" : "TERMS OF USE - SILICON LABORATORIES INC.\n(With respect to Silicon Labs software components, this Software Bill of Materials (SBOM) is based upon Silicon Labs'\nreview and analysis of the code version when released.  It is provided \"AS IS\" and does not modify, change or alter\nthe terms or conditions of your use of Silicon Labs' software and/or SDKs based upon license terms and/or agreements\nassociated with this software or SDKs when distributed to you, received by you, or installed by you.  Further, no\nwarranties or obligations are created by this SBOM.  It is your obligation to comply with the terms of licenses\nreferenced in this SBOM.)",
-  "documentDescribes" : [ "SPDXRef-silabs.simplicity_sdk-2025.12.1" ],
+  "documentDescribes" : [ "SPDXRef-silabs.simplicity_sdk-2025.12.1", "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0" ],
   "packages" : [ {
     "SPDXID" : "SPDXRef-silabs.simplicity_sdk-2025.12.1",
     "name" : "Simplicity SDK Suite",
@@ -1283,10 +1283,61 @@
     "downloadLocation" : "NOASSERTION",
     "supplier" : "Organization: Silicon Laboratories, Inc.",
     "licenseConcluded" : "Zlib"
+  }, {
+    "SPDXID" : "SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_pwm_led_core",
+    "name" : "Simple PWM LED Core",
+    "versionInfo" : "2025.12.1",
+    "primaryPackagePurpose" : "LIBRARY",
+    "downloadLocation" : "NOASSERTION",
+    "supplier" : "Organization: Silicon Laboratories, Inc.",
+    "licenseConcluded" : "Zlib"
+  }, {
+    "SPDXID" : "SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_rgb_pwm_led_core",
+    "name" : "Simple RGB PWM LED",
+    "versionInfo" : "2025.12.1",
+    "primaryPackagePurpose" : "LIBRARY",
+    "downloadLocation" : "NOASSERTION",
+    "supplier" : "Organization: Silicon Laboratories, Inc.",
+    "licenseConcluded" : "Zlib"
+  }, {
+    "SPDXID" : "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0",
+    "name" : "No name",
+    "versionInfo" : "1.0.0",
+    "primaryPackagePurpose" : "LIBRARY",
+    "downloadLocation" : "NOASSERTION",
+    "supplier" : "Organization: NOASSERTION"
+  }, {
+    "SPDXID" : "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-led_effects_base",
+    "name" : "LED Effects Base",
+    "versionInfo" : "1.0.0",
+    "primaryPackagePurpose" : "LIBRARY",
+    "downloadLocation" : "NOASSERTION",
+    "supplier" : "Organization: NOASSERTION",
+    "licenseConcluded" : "NOASSERTION"
+  }, {
+    "SPDXID" : "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-ws2812_driver",
+    "name" : "WS2812 LED Driver",
+    "versionInfo" : "1.0.0",
+    "primaryPackagePurpose" : "LIBRARY",
+    "downloadLocation" : "NOASSERTION",
+    "supplier" : "Organization: NOASSERTION",
+    "licenseConcluded" : "NOASSERTION"
+  }, {
+    "SPDXID" : "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-qma6100p_driver",
+    "name" : "QMA6100P Accelerometer Driver",
+    "versionInfo" : "1.0.0",
+    "primaryPackagePurpose" : "LIBRARY",
+    "downloadLocation" : "NOASSERTION",
+    "supplier" : "Organization: NOASSERTION",
+    "licenseConcluded" : "NOASSERTION"
   } ],
   "relationships" : [ {
     "spdxElementId" : "SPDXRef-DOCUMENT",
     "relatedSpdxElement" : "SPDXRef-silabs.simplicity_sdk-2025.12.1",
+    "relationshipType" : "DESCRIBES"
+  }, {
+    "spdxElementId" : "SPDXRef-DOCUMENT",
+    "relatedSpdxElement" : "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0",
     "relationshipType" : "DESCRIBES"
   }, {
     "spdxElementId" : "SPDXRef-silabs.simplicity_sdk-2025.12.1",
@@ -1899,6 +1950,26 @@
   }, {
     "spdxElementId" : "SPDXRef-silabs.simplicity_sdk-2025.12.1",
     "relatedSpdxElement" : "SPDXRef-silabs.simplicity_sdk-2025.12.1-gpio",
+    "relationshipType" : "CONTAINS"
+  }, {
+    "spdxElementId" : "SPDXRef-silabs.simplicity_sdk-2025.12.1",
+    "relatedSpdxElement" : "SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_pwm_led_core",
+    "relationshipType" : "CONTAINS"
+  }, {
+    "spdxElementId" : "SPDXRef-silabs.simplicity_sdk-2025.12.1",
+    "relatedSpdxElement" : "SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_rgb_pwm_led_core",
+    "relationshipType" : "CONTAINS"
+  }, {
+    "spdxElementId" : "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0",
+    "relatedSpdxElement" : "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-led_effects_base",
+    "relationshipType" : "CONTAINS"
+  }, {
+    "spdxElementId" : "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0",
+    "relatedSpdxElement" : "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-ws2812_driver",
+    "relationshipType" : "CONTAINS"
+  }, {
+    "spdxElementId" : "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0",
+    "relatedSpdxElement" : "SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-qma6100p_driver",
     "relationshipType" : "CONTAINS"
   } ]
 }

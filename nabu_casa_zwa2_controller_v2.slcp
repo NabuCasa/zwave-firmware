@@ -63,6 +63,9 @@ sdk:
 toolchain_settings: [
   ]
 component:
+- package: nabucasa_zwa2
+  vendor: nabucasa
+  id: led_effects_base
 - package: simplicity_sdk
   vendor: silabs
   id: EFR32ZG23A020F512GM40
@@ -200,6 +203,10 @@ ui_hints:
   highlight:
   - path: README.md
     focus: true
+sdk_extension:
+- vendor: nabucasa
+  id: nabucasa_zwa2
+  version: 1.0.0
 post_build:
 - path: nabu_casa_zwa2_controller_v2.slpb
   profile: zwave_application
