@@ -42,6 +42,10 @@
 #endif
 
 #include <assert.h>
+#include "led_effects.h"
+#include "led_manager.h"
+#include "cmds_proprietary.h"
+#include <ZAF_nvm_app.h>
 
 #if (!defined(SL_CATALOG_SILICON_LABS_ZWAVE_APPLICATION_PRESENT) && !defined(UNIT_TEST))
 #include "app_hw.h"
@@ -58,6 +62,9 @@
 /* Basic level definitions */
 #define BASIC_ON 0xFF
 #define BASIC_OFF 0x00
+
+/* True until the host sends the first serial command */
+static bool bAwaitingConnection = true;
 
 #define TX_POWER_LR_20_DBM    200
 #define TX_POWER_LR_14_DBM    140
@@ -497,6 +504,12 @@ ApplicationTask(SApplicationHandles* pAppHandles)
 
 static void SerialAPICommandHandler(void)
 {
+  /* Detect first command from host — switch LED from pulsing to solid */
+  if (bAwaitingConnection) {
+    bAwaitingConnection = false;
+    led_effects_set_connected();
+  }
+
   const bool handler_invoked = invoke_cmd_handler(serial_frame);
   if (!handler_invoked) {
     /* TODO - send a "Not Supported" respond frame */
@@ -807,6 +820,28 @@ ApplicationInit(
 
   ZPAL_LOG_INFO(ZPAL_LOG_APP, "ApplicationInit eResetReason = %d\n", eResetReason);
   ZAF_PrintAppInfo();
+
+  /* Initialize LED effects system (starts tilt monitoring) */
+  led_effects_init();
+
+  /* Restore LED state from NVM */
+  {
+    NabuCasaLedStorage_t ledStorage = {0};
+    if (ZPAL_STATUS_OK == ZAF_nvm_app_read(FILE_ID_NABUCASA_LED, &ledStorage, sizeof(ledStorage))
+        && ledStorage.valid) {
+      bool state = (ledStorage.r > 0 || ledStorage.g > 0 || ledStorage.b > 0);
+      if (state) {
+        led_manager_set_color(LED_PRIORITY_MANUAL, RGB8(ledStorage.r, ledStorage.g, ledStorage.b));
+      }
+    }
+  }
+
+  /* Restore tilt detection config from NVM */
+  led_effects_set_tilt_enabled(nc_config_get(NC_CFG_ENABLE_TILT_INDICATOR));
+
+  /* Start searching animation (pulse white) until host connects */
+  bAwaitingConnection = true;
+  led_effects_set_searching();
 
   /*************************************************************************************
   * CREATE USER TASKS  -  ZW_ApplicationRegisterTask() and ZW_UserTask_CreateTask()
