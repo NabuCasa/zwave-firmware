@@ -1,0 +1,5 @@
+**/cmake_gcc/
+artifacts/
+.uceditor/
+.vscode/c_cpp_properties.json
+.projectlinkstore
