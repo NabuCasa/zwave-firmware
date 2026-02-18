@@ -1,5 +1,7 @@
-**/cmake_gcc/
+build/
 artifacts/
+**/cmake_gcc/
 .uceditor/
-.vscode/c_cpp_properties.json
 .projectlinkstore
+.vscode/c_cpp_properties.json
+.env

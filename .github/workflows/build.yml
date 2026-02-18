@@ -1,0 +1,174 @@
+name: "Build firmware"
+
+# Run this job on all pushes to master, for pull requests
+# as well as tags with a semantic version
+on:
+  push:
+    branches:
+      # This avoids having duplicate builds in non-forked PRs
+      - "master"
+      - "sisdk-*"
+  release:
+    types:
+      - published
+  pull_request: {}
+
+# Cancel previous PR/branch runs when a new commit is pushed
+concurrency:
+  group: "build-firmware-${{ github.ref }}"
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Install SLT CLI
+        run: |
+          curl -o slt.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.0-linux-x64.zip
+          unzip -q slt.zip -d /usr/local/bin
+          chmod +x /usr/local/bin/slt
+
+      - name: Install SDK and tools
+        run: |
+          slt --non-interactive install conan
+          slt --non-interactive install slc-cli
+          slt --non-interactive install simplicity-sdk/2025.12.1
+          slt --non-interactive install commander
+          slt --non-interactive install cmake
+          slt --non-interactive install ninja
+
+      - name: Set up tool paths
+        run: |
+          echo "SDK=$(slt where simplicity-sdk/2025.12.1)" >> $GITHUB_ENV
+          echo "TOOLCHAIN=$(find $HOME/.silabs/slt/installs/conan/p -maxdepth 1 -name 'gcc-*' -type d | head -n 1)/p" >> $GITHUB_ENV
+          echo "$(slt where slc-cli)" >> $GITHUB_PATH
+          echo "$(slt where commander)" >> $GITHUB_PATH
+          echo "$(slt where cmake)/bin" >> $GITHUB_PATH
+          echo "$(slt where ninja)" >> $GITHUB_PATH
+
+      - name: Build project
+        run: tools/build.sh
+        env:
+          SDK: ${{ env.SDK }}
+          TOOLCHAIN: ${{ env.TOOLCHAIN }}
+          COMMANDER: commander
+
+      - name: Check build output
+        run: |
+          ls -la build/cmake_gcc
+
+      - name: Determine firmware version
+        id: version
+        run: |
+          VERSION=$(node tools/extract_version.mjs)
+          if [ "${{ github.event_name }}" == "release" ]; then
+            SUFFIX="$VERSION"
+          else
+            COMMIT=$(git rev-parse --short ${{ github.sha }})
+            SUFFIX="${VERSION}_${COMMIT}"
+          fi
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+          echo "SUFFIX=${SUFFIX}" >> $GITHUB_ENV
+
+      - name: Copy build artifacts
+        run: |
+          mkdir -p artifacts
+          cp build/cmake_gcc/nabu_casa_zwa2_controller_v2.hex artifacts/zwa2_controller.hex
+          cp build/cmake_gcc/nabu_casa_zwa2_controller_v2.out artifacts/zwa2_controller.out
+          cp build/cmake_gcc/nabu_casa_zwa2_controller_v2.map artifacts/zwa2_controller.map
+
+      - name: Create signed GBL
+        run: tools/mkgbl.sh
+        env:
+          COMMANDER: commander
+
+      - name: Compute checksums for HEX files
+        run: |
+          sha256sum artifacts/zwa2_controller.hex | cut -d" " -f1 > artifacts/zwa2_controller.hex.sha256
+          md5sum artifacts/zwa2_controller.hex | cut -d" " -f1 > artifacts/zwa2_controller.hex.md5
+
+      - name: Prepare files for upload
+        run: |
+          mkdir -p upload
+          cp artifacts/zwa2_controller.gbl upload/zwa2_controller_${{ env.SUFFIX }}.gbl
+          echo "GBL=zwa2_controller_${{ env.SUFFIX }}.gbl" >> $GITHUB_ENV
+          cp artifacts/zwa2_controller.hex upload/zwa2_controller_${{ env.SUFFIX }}.hex
+          echo "HEX=zwa2_controller_${{ env.SUFFIX }}.hex" >> $GITHUB_ENV
+          cp artifacts/zwa2_controller.hex.sha256 upload/zwa2_controller_${{ env.SUFFIX }}.hex.sha256
+          echo "HEX_SHA256=zwa2_controller_${{ env.SUFFIX }}.hex.sha256" >> $GITHUB_ENV
+          cp artifacts/zwa2_controller.hex.md5 upload/zwa2_controller_${{ env.SUFFIX }}.hex.md5
+          echo "HEX_MD5=zwa2_controller_${{ env.SUFFIX }}.hex.md5" >> $GITHUB_ENV
+          cp artifacts/zwa2_controller.out upload/zwa2_controller_${{ env.SUFFIX }}.out
+          echo "OUT=zwa2_controller_${{ env.SUFFIX }}.out" >> $GITHUB_ENV
+          cp artifacts/zwa2_controller.map upload/zwa2_controller_${{ env.SUFFIX }}.map
+          echo "MAP=zwa2_controller_${{ env.SUFFIX }}.map" >> $GITHUB_ENV
+
+      - name: Upload GBL
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.GBL }}
+          path: upload/${{ env.GBL }}
+
+      - name: Upload HEX
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.HEX }}
+          path: upload/${{ env.HEX }}
+
+      - name: Upload HEX SHAsum
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.HEX_SHA256 }}
+          path: upload/${{ env.HEX_SHA256 }}
+
+      - name: Upload HEX MD5sum
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.HEX_MD5 }}
+          path: upload/${{ env.HEX_MD5 }}
+
+      - name: Upload OUT
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.OUT }}
+          path: upload/${{ env.OUT }}
+
+      - name: Upload MAP
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.MAP }}
+          path: upload/${{ env.MAP }}
+
+      - name: Upload firmware package
+        uses: actions/upload-artifact@v4
+        with:
+          name: zwa2_controller_${{ env.SUFFIX }}
+          path: upload/*.*
+
+      - name: Upload to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: upload/*.*
+
+      - name: Debug Build failures
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build_log
+          path: |
+            build/cmake_gcc/CMakeFiles/CMakeOutput.log
+            build/cmake_gcc/CMakeFiles/CMakeError.log
