@@ -13,10 +13,77 @@ DocumentNamespace: https://silabs.com
 
 ## Creation Information
 Creator: Organization: Silicon Laboratories, Inc.
-Created: 2026-02-17T13:55:16Z
+Created: 2026-02-18T12:49:57Z
 ## Relationships
-Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-silabs.simplicity_sdk-2025.12.1
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-nabucasa.nabucasa_hardware-1.0.0
 Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-nabucasa.nabucasa_zwa2-1.0.0
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-silabs.simplicity_sdk-2025.12.1
+
+## Package Information
+PackageName: No name
+SPDXID: SPDXRef-nabucasa.nabucasa_hardware-1.0.0
+PackageVersion: 1.0.0
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: NOASSERTION
+## Relationships
+Relationship: SPDXRef-nabucasa.nabucasa_hardware-1.0.0 CONTAINS SPDXRef-nabucasa.nabucasa_hardware-1.0.0-qma6100p_driver
+Relationship: SPDXRef-nabucasa.nabucasa_hardware-1.0.0 CONTAINS SPDXRef-nabucasa.nabucasa_hardware-1.0.0-ws2812_driver
+
+## Package Information
+PackageName: QMA6100P Accelerometer Driver
+SPDXID: SPDXRef-nabucasa.nabucasa_hardware-1.0.0-qma6100p_driver
+PackageVersion: 1.0.0
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+## Relationships
+Relationship: SPDXRef-nabucasa.nabucasa_hardware-1.0.0-qma6100p_driver CONTAINED_BY SPDXRef-nabucasa.nabucasa_hardware-1.0.0
+
+## Package Information
+PackageName: WS2812 LED Driver
+SPDXID: SPDXRef-nabucasa.nabucasa_hardware-1.0.0-ws2812_driver
+PackageVersion: 1.0.0
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+## Relationships
+Relationship: SPDXRef-nabucasa.nabucasa_hardware-1.0.0-ws2812_driver CONTAINED_BY SPDXRef-nabucasa.nabucasa_hardware-1.0.0
+
+## Package Information
+PackageName: No name
+SPDXID: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0
+PackageVersion: 1.0.0
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: NOASSERTION
+## Relationships
+Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0 CONTAINS SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-led_effects_zwa2
+Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0 CONTAINS SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-cmds_proprietary_zwa2
+
+## Package Information
+PackageName: LED Effects (ZWA-2)
+SPDXID: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-led_effects_zwa2
+PackageVersion: 1.0.0
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+## Relationships
+Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-led_effects_zwa2 CONTAINED_BY SPDXRef-nabucasa.nabucasa_zwa2-1.0.0
+
+## Package Information
+PackageName: Proprietary Serial API Commands (ZWA-2)
+SPDXID: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-cmds_proprietary_zwa2
+PackageVersion: 1.0.0
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+## Relationships
+Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-cmds_proprietary_zwa2 CONTAINED_BY SPDXRef-nabucasa.nabucasa_zwa2-1.0.0
 
 ## Package Information
 PackageName: Simplicity SDK Suite
@@ -36,10 +103,9 @@ Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.si
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-mpu
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-power_manager_no_deepsleep
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-rail_util_pti
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_led
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-sl_main
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-power_manager
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-device_manager
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-power_manager
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-led
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-sl_rail_util_pti
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-bit
@@ -75,8 +141,8 @@ Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.si
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-status
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_chip
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-rail_lib_singleprotocol
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_vdac
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_eusart
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_vdac
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-sl_rail_util_compatible_pa
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_smu
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-memory_manager_pool
@@ -84,6 +150,7 @@ Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.si
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_acmp
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-freertos
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-cmsis_os2_ext_task_register
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_pwm_led_core
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-nvm3_source
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-cmsis_rtos2_tick
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_cmu
@@ -108,7 +175,6 @@ Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.si
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-se_manager_mailbox
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-se_manager_config
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-power_manager_handler_implementation
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_led_core
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_i2c
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_rmu
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_iadc
@@ -117,6 +183,7 @@ Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.si
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-cmsis_common
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-mbedtls_slcrypto_driver
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_system
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_rgb_pwm_led_core
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-common_token_manager_core
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-hal_gpio
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-rail_lib
@@ -148,8 +215,8 @@ Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.si
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-toolchain_gcc
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-cmsis_rtos2_headers
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-device_clock
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-component_catalog
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_emu
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-component_catalog
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-clock_manager_runtime_hal_s2
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_burtc
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-common_token_manager_dynamic
@@ -173,8 +240,6 @@ Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.si
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-sl_main_init
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-sl_main_process_action
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-gpio
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_pwm_led_core
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1 CONTAINS SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_rgb_pwm_led_core
 
 ## Package Information
 PackageName: EFR32ZG23A020F512GM40
@@ -287,17 +352,6 @@ PackageLicenseConcluded: Zlib
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-rail_util_pti CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
 
 ## Package Information
-PackageName: Simple LED
-SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_led
-PackageVersion: 2025.12.1
-PrimaryPackagePurpose: LIBRARY
-PackageDownloadLocation: NOASSERTION
-PackageSupplier: Organization: Silicon Laboratories, Inc.
-PackageLicenseConcluded: Zlib
-## Relationships
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_led CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
-
-## Package Information
 PackageName: System Setup (sl_main)
 SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-sl_main
 PackageVersion: 2025.12.1
@@ -309,17 +363,6 @@ PackageLicenseConcluded: Zlib
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-sl_main CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
 
 ## Package Information
-PackageName: Power Manager
-SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-power_manager
-PackageVersion: 2025.12.1
-PrimaryPackagePurpose: LIBRARY
-PackageDownloadLocation: NOASSERTION
-PackageSupplier: Organization: Silicon Laboratories, Inc.
-PackageLicenseConcluded: Zlib
-## Relationships
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-power_manager CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
-
-## Package Information
 PackageName: Device Manager
 SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-device_manager
 PackageVersion: 2025.12.1
@@ -329,6 +372,17 @@ PackageSupplier: Organization: Silicon Laboratories, Inc.
 PackageLicenseConcluded: Zlib
 ## Relationships
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-device_manager CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
+
+## Package Information
+PackageName: Power Manager
+SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-power_manager
+PackageVersion: 2025.12.1
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: Silicon Laboratories, Inc.
+PackageLicenseConcluded: Zlib
+## Relationships
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-power_manager CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
 
 ## Package Information
 PackageName: Generic LED API
@@ -731,17 +785,6 @@ PackageLicenseConcluded: MSLA
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-rail_lib_singleprotocol CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
 
 ## Package Information
-PackageName: VDAC
-SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_vdac
-PackageVersion: 2025.12.1
-PrimaryPackagePurpose: LIBRARY
-PackageDownloadLocation: NOASSERTION
-PackageSupplier: Organization: Silicon Laboratories, Inc.
-PackageLicenseConcluded: Zlib
-## Relationships
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_vdac CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
-
-## Package Information
 PackageName: EUSART
 SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_eusart
 PackageVersion: 2025.12.1
@@ -751,6 +794,17 @@ PackageSupplier: Organization: Silicon Laboratories, Inc.
 PackageLicenseConcluded: Zlib
 ## Relationships
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_eusart CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
+
+## Package Information
+PackageName: VDAC
+SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_vdac
+PackageVersion: 2025.12.1
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: Silicon Laboratories, Inc.
+PackageLicenseConcluded: Zlib
+## Relationships
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_vdac CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
 
 ## Package Information
 PackageName: RAIL Utility, PA compatibility
@@ -843,6 +897,17 @@ PackageSupplier: Organization: Silicon Laboratories, Inc.
 PackageLicenseConcluded: Zlib
 ## Relationships
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-cmsis_os2_ext_task_register CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
+
+## Package Information
+PackageName: Simple PWM LED Core
+SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_pwm_led_core
+PackageVersion: 2025.12.1
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: Silicon Laboratories, Inc.
+PackageLicenseConcluded: Zlib
+## Relationships
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_pwm_led_core CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
 
 ## Package Information
 PackageName: NVM3 Core (source)
@@ -1124,17 +1189,6 @@ PackageLicenseConcluded: Zlib
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-power_manager_handler_implementation CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
 
 ## Package Information
-PackageName: Simple LED Core
-SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_led_core
-PackageVersion: 2025.12.1
-PrimaryPackagePurpose: LIBRARY
-PackageDownloadLocation: NOASSERTION
-PackageSupplier: Organization: Silicon Laboratories, Inc.
-PackageLicenseConcluded: Zlib
-## Relationships
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_led_core CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
-
-## Package Information
 PackageName: I2C
 SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_i2c
 PackageVersion: 2025.12.1
@@ -1221,6 +1275,17 @@ PackageSupplier: Organization: Silicon Laboratories, Inc.
 PackageLicenseConcluded: Zlib
 ## Relationships
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_system CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
+
+## Package Information
+PackageName: Simple RGB PWM LED
+SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_rgb_pwm_led_core
+PackageVersion: 2025.12.1
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: Silicon Laboratories, Inc.
+PackageLicenseConcluded: Zlib
+## Relationships
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_rgb_pwm_led_core CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
 
 ## Package Information
 PackageName: Common Token Manager Core
@@ -1594,17 +1659,6 @@ PackageLicenseConcluded: Zlib
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-device_clock CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
 
 ## Package Information
-PackageName: Component Catalog
-SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-component_catalog
-PackageVersion: 2025.12.1
-PrimaryPackagePurpose: LIBRARY
-PackageDownloadLocation: NOASSERTION
-PackageSupplier: Organization: Silicon Laboratories, Inc.
-PackageLicenseConcluded: Zlib
-## Relationships
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-component_catalog CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
-
-## Package Information
 PackageName: EMU
 SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_emu
 PackageVersion: 2025.12.1
@@ -1614,6 +1668,17 @@ PackageSupplier: Organization: Silicon Laboratories, Inc.
 PackageLicenseConcluded: Zlib
 ## Relationships
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-emlib_emu CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
+
+## Package Information
+PackageName: Component Catalog
+SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-component_catalog
+PackageVersion: 2025.12.1
+PrimaryPackagePurpose: LIBRARY
+PackageDownloadLocation: NOASSERTION
+PackageSupplier: Organization: Silicon Laboratories, Inc.
+PackageLicenseConcluded: Zlib
+## Relationships
+Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-component_catalog CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
 
 ## Package Information
 PackageName: Clock Manager Runtime HAL Series 2
@@ -1882,70 +1947,3 @@ PackageSupplier: Organization: Silicon Laboratories, Inc.
 PackageLicenseConcluded: Zlib
 ## Relationships
 Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-gpio CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
-
-## Package Information
-PackageName: Simple PWM LED Core
-SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_pwm_led_core
-PackageVersion: 2025.12.1
-PrimaryPackagePurpose: LIBRARY
-PackageDownloadLocation: NOASSERTION
-PackageSupplier: Organization: Silicon Laboratories, Inc.
-PackageLicenseConcluded: Zlib
-## Relationships
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_pwm_led_core CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
-
-## Package Information
-PackageName: Simple RGB PWM LED
-SPDXID: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_rgb_pwm_led_core
-PackageVersion: 2025.12.1
-PrimaryPackagePurpose: LIBRARY
-PackageDownloadLocation: NOASSERTION
-PackageSupplier: Organization: Silicon Laboratories, Inc.
-PackageLicenseConcluded: Zlib
-## Relationships
-Relationship: SPDXRef-silabs.simplicity_sdk-2025.12.1-simple_rgb_pwm_led_core CONTAINED_BY SPDXRef-silabs.simplicity_sdk-2025.12.1
-
-## Package Information
-PackageName: No name
-SPDXID: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0
-PackageVersion: 1.0.0
-PrimaryPackagePurpose: LIBRARY
-PackageDownloadLocation: NOASSERTION
-PackageSupplier: Organization: NOASSERTION
-## Relationships
-Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0 CONTAINS SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-led_effects_base
-Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0 CONTAINS SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-ws2812_driver
-Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0 CONTAINS SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-qma6100p_driver
-
-## Package Information
-PackageName: LED Effects Base
-SPDXID: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-led_effects_base
-PackageVersion: 1.0.0
-PrimaryPackagePurpose: LIBRARY
-PackageDownloadLocation: NOASSERTION
-PackageSupplier: Organization: NOASSERTION
-PackageLicenseConcluded: NOASSERTION
-## Relationships
-Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-led_effects_base CONTAINED_BY SPDXRef-nabucasa.nabucasa_zwa2-1.0.0
-
-## Package Information
-PackageName: WS2812 LED Driver
-SPDXID: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-ws2812_driver
-PackageVersion: 1.0.0
-PrimaryPackagePurpose: LIBRARY
-PackageDownloadLocation: NOASSERTION
-PackageSupplier: Organization: NOASSERTION
-PackageLicenseConcluded: NOASSERTION
-## Relationships
-Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-ws2812_driver CONTAINED_BY SPDXRef-nabucasa.nabucasa_zwa2-1.0.0
-
-## Package Information
-PackageName: QMA6100P Accelerometer Driver
-SPDXID: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-qma6100p_driver
-PackageVersion: 1.0.0
-PrimaryPackagePurpose: LIBRARY
-PackageDownloadLocation: NOASSERTION
-PackageSupplier: Organization: NOASSERTION
-PackageLicenseConcluded: NOASSERTION
-## Relationships
-Relationship: SPDXRef-nabucasa.nabucasa_zwa2-1.0.0-qma6100p_driver CONTAINED_BY SPDXRef-nabucasa.nabucasa_zwa2-1.0.0

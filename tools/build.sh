@@ -15,7 +15,7 @@ fi
 
 SLC=${SLC:-slc}
 COMMANDER=${COMMANDER:-commander}
-PROJ_NAME=nabu_casa_zwa2_controller_v2
+PROJ_NAME=nc_controller_ncp
 
 rm -rf build/
 

@@ -10,7 +10,7 @@ referenced in this SBOM.)
 -->
 <bom xmlns="http://cyclonedx.org/schema/bom/1.6" version="1">
   <metadata>
-    <timestamp>2026-02-17T13:55:16Z</timestamp>
+    <timestamp>2026-02-18T12:49:57Z</timestamp>
     <authors>
       <author>
         <name>Silicon Laboratories, Inc.</name>
@@ -18,6 +18,46 @@ referenced in this SBOM.)
     </authors>
   </metadata>
   <components>
+    <component bom-ref="nabucasa.nabucasa_hardware:1.0.0" type="library">
+      <name>No name</name>
+      <version>1.0.0</version>
+      <components>
+        <component bom-ref="nabucasa.nabucasa_hardware:1.0.0:qma6100p_driver" type="library">
+          <name>QMA6100P Accelerometer Driver</name>
+          <version>1.0.0</version>
+          <licenses>
+            <expression>NOASSERTION</expression>
+          </licenses>
+        </component>
+        <component bom-ref="nabucasa.nabucasa_hardware:1.0.0:ws2812_driver" type="library">
+          <name>WS2812 LED Driver</name>
+          <version>1.0.0</version>
+          <licenses>
+            <expression>NOASSERTION</expression>
+          </licenses>
+        </component>
+      </components>
+    </component>
+    <component bom-ref="nabucasa.nabucasa_zwa2:1.0.0" type="library">
+      <name>No name</name>
+      <version>1.0.0</version>
+      <components>
+        <component bom-ref="nabucasa.nabucasa_zwa2:1.0.0:led_effects_zwa2" type="library">
+          <name>LED Effects (ZWA-2)</name>
+          <version>1.0.0</version>
+          <licenses>
+            <expression>NOASSERTION</expression>
+          </licenses>
+        </component>
+        <component bom-ref="nabucasa.nabucasa_zwa2:1.0.0:cmds_proprietary_zwa2" type="library">
+          <name>Proprietary Serial API Commands (ZWA-2)</name>
+          <version>1.0.0</version>
+          <licenses>
+            <expression>NOASSERTION</expression>
+          </licenses>
+        </component>
+      </components>
+    </component>
     <component bom-ref="silabs.simplicity_sdk:2025.12.1" type="library">
       <supplier>
         <name>Silicon Laboratories, Inc.</name>
@@ -125,16 +165,6 @@ referenced in this SBOM.)
             <expression>Zlib</expression>
           </licenses>
         </component>
-        <component bom-ref="silabs.simplicity_sdk:2025.12.1:simple_led" type="library">
-          <name>Simple LED</name>
-          <version>2025.12.1</version>
-	      <supplier>
-	        <name>Silicon Laboratories, Inc.</name>
-	      </supplier>
-          <licenses>
-            <expression>Zlib</expression>
-          </licenses>
-        </component>
         <component bom-ref="silabs.simplicity_sdk:2025.12.1:sl_main" type="library">
           <name>System Setup (sl_main)</name>
           <version>2025.12.1</version>
@@ -145,8 +175,8 @@ referenced in this SBOM.)
             <expression>Zlib</expression>
           </licenses>
         </component>
-        <component bom-ref="silabs.simplicity_sdk:2025.12.1:power_manager" type="library">
-          <name>Power Manager</name>
+        <component bom-ref="silabs.simplicity_sdk:2025.12.1:device_manager" type="library">
+          <name>Device Manager</name>
           <version>2025.12.1</version>
 	      <supplier>
 	        <name>Silicon Laboratories, Inc.</name>
@@ -155,8 +185,8 @@ referenced in this SBOM.)
             <expression>Zlib</expression>
           </licenses>
         </component>
-        <component bom-ref="silabs.simplicity_sdk:2025.12.1:device_manager" type="library">
-          <name>Device Manager</name>
+        <component bom-ref="silabs.simplicity_sdk:2025.12.1:power_manager" type="library">
+          <name>Power Manager</name>
           <version>2025.12.1</version>
 	      <supplier>
 	        <name>Silicon Laboratories, Inc.</name>
@@ -535,8 +565,8 @@ referenced in this SBOM.)
             <expression>MSLA</expression>
           </licenses>
         </component>
-        <component bom-ref="silabs.simplicity_sdk:2025.12.1:emlib_vdac" type="library">
-          <name>VDAC</name>
+        <component bom-ref="silabs.simplicity_sdk:2025.12.1:emlib_eusart" type="library">
+          <name>EUSART</name>
           <version>2025.12.1</version>
 	      <supplier>
 	        <name>Silicon Laboratories, Inc.</name>
@@ -545,8 +575,8 @@ referenced in this SBOM.)
             <expression>Zlib</expression>
           </licenses>
         </component>
-        <component bom-ref="silabs.simplicity_sdk:2025.12.1:emlib_eusart" type="library">
-          <name>EUSART</name>
+        <component bom-ref="silabs.simplicity_sdk:2025.12.1:emlib_vdac" type="library">
+          <name>VDAC</name>
           <version>2025.12.1</version>
 	      <supplier>
 	        <name>Silicon Laboratories, Inc.</name>
@@ -637,6 +667,16 @@ referenced in this SBOM.)
         </component>
         <component bom-ref="silabs.simplicity_sdk:2025.12.1:cmsis_os2_ext_task_register" type="library">
           <name>Task registers abstraction layer</name>
+          <version>2025.12.1</version>
+	      <supplier>
+	        <name>Silicon Laboratories, Inc.</name>
+	      </supplier>
+          <licenses>
+            <expression>Zlib</expression>
+          </licenses>
+        </component>
+        <component bom-ref="silabs.simplicity_sdk:2025.12.1:simple_pwm_led_core" type="library">
+          <name>Simple PWM LED Core</name>
           <version>2025.12.1</version>
 	      <supplier>
 	        <name>Silicon Laboratories, Inc.</name>
@@ -905,16 +945,6 @@ referenced in this SBOM.)
             <expression>Zlib</expression>
           </licenses>
         </component>
-        <component bom-ref="silabs.simplicity_sdk:2025.12.1:simple_led_core" type="library">
-          <name>Simple LED Core</name>
-          <version>2025.12.1</version>
-	      <supplier>
-	        <name>Silicon Laboratories, Inc.</name>
-	      </supplier>
-          <licenses>
-            <expression>Zlib</expression>
-          </licenses>
-        </component>
         <component bom-ref="silabs.simplicity_sdk:2025.12.1:emlib_i2c" type="library">
           <name>I2C</name>
           <version>2025.12.1</version>
@@ -987,6 +1017,16 @@ referenced in this SBOM.)
         </component>
         <component bom-ref="silabs.simplicity_sdk:2025.12.1:emlib_system" type="library">
           <name>SYSTEM</name>
+          <version>2025.12.1</version>
+	      <supplier>
+	        <name>Silicon Laboratories, Inc.</name>
+	      </supplier>
+          <licenses>
+            <expression>Zlib</expression>
+          </licenses>
+        </component>
+        <component bom-ref="silabs.simplicity_sdk:2025.12.1:simple_rgb_pwm_led_core" type="library">
+          <name>Simple RGB PWM LED</name>
           <version>2025.12.1</version>
 	      <supplier>
 	        <name>Silicon Laboratories, Inc.</name>
@@ -1345,8 +1385,8 @@ referenced in this SBOM.)
             <expression>Zlib</expression>
           </licenses>
         </component>
-        <component bom-ref="silabs.simplicity_sdk:2025.12.1:component_catalog" type="library">
-          <name>Component Catalog</name>
+        <component bom-ref="silabs.simplicity_sdk:2025.12.1:emlib_emu" type="library">
+          <name>EMU</name>
           <version>2025.12.1</version>
 	      <supplier>
 	        <name>Silicon Laboratories, Inc.</name>
@@ -1355,8 +1395,8 @@ referenced in this SBOM.)
             <expression>Zlib</expression>
           </licenses>
         </component>
-        <component bom-ref="silabs.simplicity_sdk:2025.12.1:emlib_emu" type="library">
-          <name>EMU</name>
+        <component bom-ref="silabs.simplicity_sdk:2025.12.1:component_catalog" type="library">
+          <name>Component Catalog</name>
           <version>2025.12.1</version>
 	      <supplier>
 	        <name>Silicon Laboratories, Inc.</name>
@@ -1613,53 +1653,6 @@ referenced in this SBOM.)
 	      </supplier>
           <licenses>
             <expression>Zlib</expression>
-          </licenses>
-        </component>
-        <component bom-ref="silabs.simplicity_sdk:2025.12.1:simple_pwm_led_core" type="library">
-          <name>Simple PWM LED Core</name>
-          <version>2025.12.1</version>
-	      <supplier>
-	        <name>Silicon Laboratories, Inc.</name>
-	      </supplier>
-          <licenses>
-            <expression>Zlib</expression>
-          </licenses>
-        </component>
-        <component bom-ref="silabs.simplicity_sdk:2025.12.1:simple_rgb_pwm_led_core" type="library">
-          <name>Simple RGB PWM LED</name>
-          <version>2025.12.1</version>
-	      <supplier>
-	        <name>Silicon Laboratories, Inc.</name>
-	      </supplier>
-          <licenses>
-            <expression>Zlib</expression>
-          </licenses>
-        </component>
-      </components>
-    </component>
-    <component bom-ref="nabucasa.nabucasa_zwa2:1.0.0" type="library">
-      <name>No name</name>
-      <version>1.0.0</version>
-      <components>
-        <component bom-ref="nabucasa.nabucasa_zwa2:1.0.0:led_effects_base" type="library">
-          <name>LED Effects Base</name>
-          <version>1.0.0</version>
-          <licenses>
-            <expression>NOASSERTION</expression>
-          </licenses>
-        </component>
-        <component bom-ref="nabucasa.nabucasa_zwa2:1.0.0:ws2812_driver" type="library">
-          <name>WS2812 LED Driver</name>
-          <version>1.0.0</version>
-          <licenses>
-            <expression>NOASSERTION</expression>
-          </licenses>
-        </component>
-        <component bom-ref="nabucasa.nabucasa_zwa2:1.0.0:qma6100p_driver" type="library">
-          <name>QMA6100P Accelerometer Driver</name>
-          <version>1.0.0</version>
-          <licenses>
-            <expression>NOASSERTION</expression>
           </licenses>
         </component>
       </components>

@@ -4,6 +4,7 @@ app_properties_config.h=-77184399
 btl_interface_cfg.h=1106915078
 btl_interface_cfg_s2c3.h=-2135829308
 led_effects_config.h=1367333750
+led_effects_config_zwa2.h=-1733440007
 nvm3_default_config.h=-951198080
 psa_crypto_config.h=2001171959
 qma6100p_config.h=705353330

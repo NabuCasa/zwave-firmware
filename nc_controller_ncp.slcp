@@ -1,6 +1,6 @@
 # Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
-project_name: nabu_casa_zwa2_controller_v2
-label: nabu_casa_zwa2_controller_v2
+project_name: nc_controller_ncp
+label: nc_controller_ncp
 description: |
   The Serial Applications Programming Interface (Serial API) allows a host to communicate with a Z-Wave chip. The host may be a PC or a less powerful embedded host CPU, such as in a remote control or in a gateway device, and so on.
 category: Z-Wave|Apps
@@ -71,10 +71,10 @@ component:
   id: ws2812_driver
 - package: nabucasa_zwa2
   vendor: nabucasa
-  id: led_effects_zwa2
+  id: cmds_proprietary_zwa2
 - package: nabucasa_zwa2
   vendor: nabucasa
-  id: cmds_proprietary_zwa2
+  id: led_effects_zwa2
 - package: simplicity_sdk
   vendor: silabs
   id: EFR32ZG23A020F512GM40
@@ -220,6 +220,6 @@ sdk_extension:
   id: nabucasa_zwa2
   version: 1.0.0
 post_build:
-- path: nabu_casa_zwa2_controller_v2.slpb
+- path: nc_controller_ncp.slpb
   profile: zwave_application
 

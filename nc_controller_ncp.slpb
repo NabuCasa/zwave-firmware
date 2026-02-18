@@ -7,7 +7,7 @@ constants:
 - name: "sample_signing_key"
   value: "config/sample_keys/sample_sign.key"
 - name: "project_name"
-  value: "nabu_casa_zwa2_controller_v2"
+  value: "nc_controller_ncp"
 steps:
 - task: "usage"
   input: "{{build_dir}}/{{project_name}}.out"

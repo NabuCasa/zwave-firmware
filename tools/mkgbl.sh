@@ -4,7 +4,7 @@
 
 COMMANDER=${COMMANDER:-commander}
 
-BUILD_OUTPUT=build/cmake_gcc/nabu_casa_zwa2_controller_v2.hex
+BUILD_OUTPUT=build/cmake_gcc/nc_controller_ncp.hex
 OUTFILE=artifacts/zwa2_controller.gbl
 SIGN_KEY=keys/vendor_sign.key
 ENC_KEY=keys/vendor_encrypt.key

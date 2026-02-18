@@ -86,9 +86,9 @@ jobs:
       - name: Copy build artifacts
         run: |
           mkdir -p artifacts
-          cp build/cmake_gcc/nabu_casa_zwa2_controller_v2.hex artifacts/zwa2_controller.hex
-          cp build/cmake_gcc/nabu_casa_zwa2_controller_v2.out artifacts/zwa2_controller.out
-          cp build/cmake_gcc/nabu_casa_zwa2_controller_v2.map artifacts/zwa2_controller.map
+          cp build/cmake_gcc/nc_controller_ncp.hex artifacts/zwa2_controller.hex
+          cp build/cmake_gcc/nc_controller_ncp.out artifacts/zwa2_controller.out
+          cp build/cmake_gcc/nc_controller_ncp.map artifacts/zwa2_controller.map
 
       - name: Create signed GBL
         run: tools/mkgbl.sh
