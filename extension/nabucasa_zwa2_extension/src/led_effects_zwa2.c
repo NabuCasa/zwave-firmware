@@ -1,5 +1,5 @@
 /*
- * led_effects.c
+ * led_effects_zwa2.c
  *
  * LED System Behaviors for ZWA-2 Z-Wave Controller
  *
@@ -11,10 +11,11 @@
  *   - No device_has_stored_network_settings() extern (not applicable for Z-Wave NCP)
  */
 
-#include "led_effects.h"
-#include "led_effects_config.h"
-#include "led_manager.h"
+#include "led_effects_zwa2.h"
+#include "led_effects_config_zwa2.h"
+#include "led_manager_zwa2.h"
 #include "qma6100p.h"
+#include "qma6100p_config.h"
 #include "sl_sleeptimer.h"
 #include <math.h>
 
@@ -56,7 +57,7 @@ static void tilt_monitor_callback(sl_sleeptimer_timer_handle_t *handle, void *da
 
   // Read raw accelerometer data
   int16_t reading[3];
-  qma6100p_read_raw_xyz(reading);
+  qma6100p_read_raw_xyz(QMA6100P_I2C_PERIPHERAL, reading);
 
   // Debounce: check if reading is stable compared to last
   int16_t dx = reading[0] - last_reading[0];

@@ -34,7 +34,6 @@ source:
 - path: utils.c
 - path: virtual_slave_node_info.c
 - path: silabs/sl_debug_cmd_handlers.c
-- path: cmds_proprietary.c
 tag:
 - prebuilt_demo
 - toolchain:gcc
@@ -57,7 +56,6 @@ include:
   - path: utils.h
   - path: virtual_slave_node_info.h
   - path: SerialAPI.h
-  - path: cmds_proprietary.h
 sdk:
   vendor: silabs
   id: simplicity_sdk
@@ -65,9 +63,18 @@ sdk:
 toolchain_settings: [
   ]
 component:
+- package: nabucasa_hardware
+  vendor: nabucasa
+  id: qma6100p_driver
+- package: nabucasa_hardware
+  vendor: nabucasa
+  id: ws2812_driver
 - package: nabucasa_zwa2
   vendor: nabucasa
-  id: led_effects_base
+  id: led_effects_zwa2
+- package: nabucasa_zwa2
+  vendor: nabucasa
+  id: cmds_proprietary_zwa2
 - package: simplicity_sdk
   vendor: silabs
   id: EFR32ZG23A020F512GM40
@@ -206,6 +213,9 @@ ui_hints:
   - path: README.md
     focus: true
 sdk_extension:
+- vendor: nabucasa
+  id: nabucasa_hardware
+  version: 1.0.0
 - vendor: nabucasa
   id: nabucasa_zwa2
   version: 1.0.0

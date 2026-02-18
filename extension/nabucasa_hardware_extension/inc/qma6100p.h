@@ -10,8 +10,6 @@
 
 #include <stdint.h>
 #include "em_i2c.h"
-#include "em_cmu.h"
-#include "em_gpio.h"
 
 #define QMA6100P_M_G                   9.80665f
 #define QMA6100P_I2C_ADDR              0x24
@@ -33,11 +31,11 @@
 #define QMA6100P_REG_RESET             0x36
 
 // Undocumented
-#define QMA6100P_REG_INTERNAL_4A       0x4A
-#define QMA6100P_REG_INTERNAL_56       0x56
+#define QMA6100P_REG_INTERNAL_4A       0x4A 
+#define QMA6100P_REG_INTERNAL_56       0x56 
 #define QMA6100P_REG_INTERNAL_5F       0x5F
 
-#define QMA6100P_RESET_CMD             0xB6  // Magic value to trigger soft reset
+#define QMA6100P_RESET_CMD             0xB6  // Magic value to trigger soft reset 
 #define QMA6100P_RESET_CLR             0x00  // Value to write back after reset
 
 #define QMA6100P_PM_MODE_ACTIVE        0x80
@@ -62,8 +60,24 @@ typedef enum {
   QMA6100P_BW_12_5 = 7
 } qma6100p_bw_t;
 
+/**
+ * @brief Initialize QMA6100P accelerometer
+ * @param i2c Pointer to I2C peripheral to use
+ */
 void qma6100p_system_init(void);
-void qma6100p_read_raw_xyz(int16_t data[3]);
-void qma6100p_read_acc_xyz(float accdata[3]);
+
+/**
+ * @brief Read raw 3-axis acceleration data
+ * @param i2c Pointer to I2C peripheral to use
+ * @param data Array to store 3-axis raw data
+ */
+void qma6100p_read_raw_xyz(I2C_TypeDef *i2c, int16_t data[3]);
+
+/**
+ * @brief Read calibrated 3-axis acceleration data in m/s^2
+ * @param i2c Pointer to I2C peripheral to use
+ * @param accdata Array to store 3-axis acceleration in m/s^2
+ */
+void qma6100p_read_acc_xyz(I2C_TypeDef *i2c, float accdata[3]);
 
 #endif /* QMA6100P_H_ */

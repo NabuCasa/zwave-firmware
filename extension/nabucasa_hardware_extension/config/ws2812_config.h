@@ -12,7 +12,8 @@
 // <o WS2812_NUM_LEDS> Number of addressable LEDs
 // <i> Default: 4
 #ifndef WS2812_NUM_LEDS
-#define WS2812_NUM_LEDS     4
+#warning "WS2812 LED count not configured"
+// #define WS2812_NUM_LEDS     4
 #endif
 
 // </h>
@@ -24,8 +25,9 @@
 // <gpio> WS2812_EN
 // $[GPIO_WS2812_EN]
 #ifndef WS2812_EN_PORT
-#define WS2812_EN_PORT      gpioPortC
-#define WS2812_EN_PIN       3
+#warning "WS2812 enable port not configured"
+// #define WS2812_EN_PORT      gpioPortC
+// #define WS2812_EN_PIN       3
 #endif
 // [GPIO_WS2812_EN]$
 
@@ -36,6 +38,10 @@
 #ifndef WS2812_SPI_PERIPHERAL
 #define WS2812_SPI_PERIPHERAL       EUSART1
 #define WS2812_SPI_PERIPHERAL_NO    1
+#endif
+
+#ifndef WS2812_SPI_LDMA_SIGNAL
+#define WS2812_SPI_LDMA_SIGNAL      ldmaPeripheralSignal_EUSART1_TXFL
 #endif
 
 #ifndef WS2812_SPI_TX_PORT
