@@ -1,3 +1,9 @@
+> [!NOTE]
+> As of firmware 1.2, NabuCasa/silabs-firmware-builder is the canonical source for Z-Wave firmwares.
+> This repo mainly serves as a reference for the older releases.
+
+---
+
 # Z-Wave Controller firmware
 
 ## Firmware versioning scheme
