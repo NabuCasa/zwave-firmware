@@ -1,5 +1,5 @@
 > [!NOTE]
-> As of firmware 1.2, NabuCasa/silabs-firmware-builder is the canonical source for Z-Wave firmwares.
+> As of firmware 1.2, [NabuCasa/silabs-firmware-builder](https://github.com/NabuCasa/silabs-firmware-builder/) is the canonical source for Z-Wave firmwares.
 > This repo mainly serves as a reference for the older releases.
 
 ---
